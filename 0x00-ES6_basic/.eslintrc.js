@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
-    'plugin:jest/all'
+    'plugin:jest/all',
+    'eslint:recommended' // Use ESLint's built-in recommended rules
   ],
   globals: {
     Atomics: 'readonly',
@@ -33,3 +34,4 @@ module.exports = {
     }
   ]
 };
+
