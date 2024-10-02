@@ -7,10 +7,10 @@
 // For every resolution, log Got a response from the API to the console
 
 export default function handleResponseFromAPI(promise) {
+  const obj = { status: 200, body: 'Status' };
+
   return promise
-    .then(() => {
-      console.log('Got a response from the API');
-      return { status: 200, body: 'Status' };
-    })
-    .catch(() => new Error());
+    .then(() => obj)
+    .catch(() => new Error())
+    .finally(() => console.log('Got a response from the API'));
 }
