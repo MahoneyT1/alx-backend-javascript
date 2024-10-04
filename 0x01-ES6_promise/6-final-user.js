@@ -5,28 +5,20 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const allResolved = [];
 
   try {
-    const user = await signUpUser(firstName, lastName);
+    const results = Promise.allSettled([await signUpUser(firstName, lastName),
+      await uploadPhoto(fileName)]);
 
-    allResolved.push({
-      status: 'Fullfilled',
-      value: user,
+    results.forEach((result) => {
+      allResolved.push(
+        {
+          status: 200,
+          value: result,
+        },
+
+      );
     });
   } catch (error) {
-    allResolved.push({
-      status: 'Rejected',
-      value: error.toString(),
-    });
-  }
-
-  try {
-    const image = await uploadPhoto(fileName);
-
-    allResolved.push({ status: 'Sucess', value: image });
-  } catch (error) {
-    allResolved.push({
-      status: 'Rejected',
-      value: error.toString(),
-    });
+    console.error(error);
   }
   return allResolved;
 }
