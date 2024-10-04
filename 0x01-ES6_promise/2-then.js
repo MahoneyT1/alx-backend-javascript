@@ -11,16 +11,14 @@
 
 export default function handleResponseFromAPI(promise) {
   return promise
-    .then(() => {
-
-      return {
+    .then((resolve) => {
+      resolve({
         status: 200,
-        body: 'sucess',
-      }
+        body: 'success',
+      });
     })
     .catch(() => new Error(''))
     .finally(() => {
       console.log('Got a response from the API');
     });
-
 }
