@@ -27,7 +27,7 @@ export default class HolbertonCourse {
     return this._length;
   }
 
-  set student(students) {
+  set students(students) {
     if (
       !Array.isArray(students)
             || students.every((student) => typeof student !== 'string')) {
@@ -36,7 +36,7 @@ export default class HolbertonCourse {
     this._students = students;
   }
 
-  get student() {
+  get students() {
     return this._students;
   }
 }
