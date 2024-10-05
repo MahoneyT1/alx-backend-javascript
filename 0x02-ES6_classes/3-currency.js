@@ -27,6 +27,6 @@ export default class Currency {
   }
   // method that prints how string representation of th class
   displayFullCurrency() {
-    return `${this._name} (${this._code})}`
+    return `${this._name} (${this._code})`
   }
 }
