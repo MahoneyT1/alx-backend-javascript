@@ -15,7 +15,7 @@ export default function getListStudents() {
 
   const thirdStudent = {
     id: 5,
-    firstName: 'serena',
+    firstName: 'Serena',
     location: 'San Francisco',
   };
 
