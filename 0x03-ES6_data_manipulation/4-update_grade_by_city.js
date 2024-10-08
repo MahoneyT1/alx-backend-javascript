@@ -17,12 +17,11 @@
 export default function updateStudentGradeByCity(array, string, newGrades = []) {
   return array.filter((student) => student.location === string)
     .map((student) => {
-      // find the object of the student through the array newGrades
-      const studentNewGrade = newGrades.find((objectId) => objectId.studentId === student.id);
+      const studentGrade = newGrades.find((objectId) => objectId.studentId === student.id);
 
       return {
         ...student,
-        grade: studentNewGrade || 'N/A',
+        grade: studentGrade ? studentGrade.grade : 'N/A',
       };
     });
 }
