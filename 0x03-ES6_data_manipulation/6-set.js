@@ -5,5 +5,5 @@
 export default function setFromArray(arr) {
   const newFilteredArray = new Set(arr);
 
-  return [...newFilteredArray];
+  return newFilteredArray;
 }
