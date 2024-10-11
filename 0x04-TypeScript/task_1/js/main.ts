@@ -74,3 +74,48 @@ const person: printTeacherFunction = {
 }
 console.log(person.printTeacher(teacher3.firstName, teacher3.lastName));
 
+// Write a Class named StudentClass:
+
+// The constructor accepts firstName(string) and lastName(string) arguments
+// The class has a method named workOnHomework that return the string Currently working
+// The class has a method named displayName. It returns the firstName of the student
+// The constructor of the class should be described through an Interface
+// The class should be described through an Interface
+// Requirements:
+
+// You can reuse the Webpack configuration from the previous exercise to compile the code.
+// When running npm run build, no TypeScript error should be displayed.
+// Every variable should use TypeScript when possible.
+
+
+class StudentClass {
+  firstname: string
+  lastName: string
+
+  constructor(firstName: string, lastName: string) {
+    firstName = firstName
+    lastName = lastName
+  }
+  workOnHomework():string {
+    return 'Currently working'
+  }
+  displayName (): string {
+    return this.firstname
+  }
+
+}
+
+const student1: StudentClass = {
+  firstname: 'Emeka',
+  lastName: 'Emenike',
+
+  workOnHomework(): string {
+    return 'Currently working'
+  },
+
+  displayName (): string {
+    return this.firstname
+  }
+} 
+
+console.log(student1.displayName())
