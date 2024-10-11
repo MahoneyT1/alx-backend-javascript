@@ -23,3 +23,12 @@ var director1 = {
     numberOfReports: 17
 };
 console.log(director1);
+;
+var person = {
+    firstName: teacher3.firstName,
+    lastName: teacher3.lastName,
+    printTeacher: function (firstName, lastName) {
+        return "".concat(firstName[0], ". ").concat(lastName);
+    },
+};
+console.log(person.printTeacher(teacher3.firstName, teacher3.lastName));
