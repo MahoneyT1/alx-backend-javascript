@@ -5,7 +5,8 @@
 const process = require('process');
 
 const displayMessage = (str) => {
-  process.stdout.write(`${str}\n`);
+  process.stdout.write(str);
+  console.log();
 };
 
 module.exports = displayMessage;
