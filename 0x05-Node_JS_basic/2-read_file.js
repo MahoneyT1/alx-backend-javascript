@@ -17,14 +17,10 @@ function countStudents(path) {
         if (error) {
             throw new Error({"error": error})
         };
-
-        return data.toString();
+        const numberOfStudents = data
+        console.log(numberOfStudents.toString())
     });
-
-    let big = data.map(()=> {
-        console.log(student)
-    })
-    big();
+    return data;
 }
 
 module.exports = countStudents;
