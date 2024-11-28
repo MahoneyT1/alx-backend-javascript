@@ -9,19 +9,23 @@ When the user ends the program, it should display This important
 software is now closing (followed by a new line)
 */
 
-// Importing the 'process' module to handle stdin and stdout
-const process = require('process');
+import process from 'process';
 
 // Display the welcome message
-console.log('Welcome to Holberton School, what is your name?');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// listen for user input
-process.stdin.on('data', (data) => {
-  // convert buffer to string
-  const name = data.toString().trim();
-
-  // print to stdout
-  console.log(`Your name is ${name}`);
-  process.stdin.pause();
-  console.log('This important software is now closing');
-});
+if (process.stdin.isTTY) {
+  process.stdin.on('data', (data)=> {
+    process.stdout.write(`Your name is: ${data.toString()} \n`);
+    process.exit();
+  });
+}
+else {
+  process.stdin.on('data', (data)=> {
+    process.stdin.write(`Your name is: ${data.toString()}`);
+    process.exit();
+  });
+  process.on('exit', ()=> {
+    process.stdout.write('This important software is now closing \n')
+  });
+}
