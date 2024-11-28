@@ -12,18 +12,9 @@ const HOST = 'localhost';
 const PORT = 1245;
 
 const app = createServer((req, res) => {
-  // check if the url is the root of the endpoint
-  if (req.url === '/') {
-    res.statusCode = 200;
-    res.setHeader('Application-Type', 'text/plain');
+    res.writeHead(200, {'content-type': "text/plain"});
     res.end('Hello Holberton School!');
-  }
 
-  if (req.url === '/test') {
-    res.statusCode = 200;
-    res.setHeader('Application-Type', 'text/plain');
-    res.end('Hello Holberton School!');
-  }
 });
 
 app.listen(PORT, HOST, () => {
