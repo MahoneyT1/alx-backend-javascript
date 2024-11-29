@@ -12,10 +12,12 @@ const HOST = 'localhost';
 const PORT = 1245;
 
 const app = createServer((req, res) => {
-  res.writeHead(200, { 'content-type': 'text/plain' });
+  res.writeHead(200, { 'Content-type': 'text/plain' });
   res.end('Hello Holberton School!');
 });
 
 app.listen(PORT, HOST, () => {
   console.log('Server is serving');
 });
+
+module.exports = app;
