@@ -1,23 +1,17 @@
-/**
- * In a file named 4-http.js, create a small HTTP server using the http module:
- * It should be assigned to the variable app and this one must be exported
- * HTTP server should listen on port 1245
- * Displays Hello Holberton School! in the page body for any endpoint as plain text
- */
+const http = require('http');
 
-const { createServer } = require('http');
-
-const HOST = 'localhost';
-
-const PORT = 1245;
-
-const app = createServer((req, res) => {
-  res.writeHead(200, { 'Content-type': 'text/plain' });
+// create the HTTP server and assign it to the variable 'app'
+const app = http.createServer((req, res) => {
+  // set the response header content type to plain text
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  // write the response body
   res.end('Hello Holberton School!');
 });
 
-app.listen(PORT, HOST, () => {
-  console.log('Server is serving');
+// make the server listen on port 1245
+app.listen(1245, () => {
+  console.log('Server is listening on port 1245');
 });
 
+// export the server
 module.exports = app;
