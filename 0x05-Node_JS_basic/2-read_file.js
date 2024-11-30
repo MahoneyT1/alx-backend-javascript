@@ -31,8 +31,8 @@ function countStudents(path) {
 
   // eslint-disable-next-line
   const csStudents = students.forEach((student) => {
-    for ( let i = 0; i < student.length; i += 1 ) {
-      if ( student[i] === 'CS' ) {
+    for (let i = 0; i < student.length; i += 1) {
+      if (student[i] === 'CS') {
         csStudentList.push(student[0].trimEnd());
       }
     }
@@ -48,9 +48,9 @@ function countStudents(path) {
   });
 
   const sweStudentCount = sweStudentList.length;
-  console.log(`Number of students: ${ totalStudentCount }`);
-  console.log(`Number of students in CS: ${ csStudentCount }. List: ${ csStudentList.join(', ') }`);
-  console.log(`Number of students in SWE: ${ sweStudentCount }. List: ${ sweStudentList.join(', ') }`);
+  console.log(`Number of students: ${totalStudentCount}`);
+  console.log(`Number of students in CS: ${csStudentCount}. List: ${csStudentList.join(', ')}`);
+  console.log(`Number of students in SWE: ${sweStudentCount}. List: ${sweStudentList.join(', ')}`);
 }
 
 module.exports = countStudents;
