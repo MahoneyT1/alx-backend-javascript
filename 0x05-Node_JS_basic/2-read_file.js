@@ -20,8 +20,8 @@ function countStudents(path) {
     console.log(numberOfStudents.toString());
   });
   const lines = data.split('\n').filter((line) => line.trim() !== '');
-  // eslint-disable-next-line
-  const headers = lines.shift();
+  // remove the header strings
+  lines.shift();
   const students = lines.map((line) => line.split(',')).filter((line) => line.length > 1);
 
   const totalStudentCount = students.length;
@@ -30,7 +30,7 @@ function countStudents(path) {
   const sweStudentList = [];
 
   // eslint-disable-next-line
-  const csStudents = students.forEach((student) => {
+  students.forEach((student) => {
     for (let i = 0; i < student.length; i += 1) {
       if (student[i] === 'CS') {
         csStudentList.push(student[0].trimEnd());
@@ -38,8 +38,7 @@ function countStudents(path) {
     }
   });
   const csStudentCount = csStudentList.length;
-  // eslint-disable-next-line
-  const sweStudents = students.forEach((student) => {
+  students.forEach((student) => {
     for (let i = 0; i < student.length; i += 1) {
       if (student[i] === 'SWE') {
         sweStudentList.push(student[0].trimEnd());
