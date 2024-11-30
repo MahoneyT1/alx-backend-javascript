@@ -9,18 +9,48 @@ It should log the number of students in each field, and the list with the
 following format: Number of students in FIELD: 6. List: LIST_OF_FIRSTNAMES
 CSV file can contain empty lines (at the end) - and they are not a valid student!
  */
-const fs = require("fs");
-
+const fs = require('fs');
 
 function countStudents(path) {
-    const data  = fs.readFileSync(path, 'utf-8', (error, data) => {
-        if (error) {
-            throw new Error({"error": error})
-        };
-        const numberOfStudents = data
-        console.log(numberOfStudents.toString())
-    });
-    return data;
+  const data = fs.readFileSync(path, 'utf-8', (error, data) => {
+    if (error) {
+      throw new Error({ error });
+    }
+    const numberOfStudents = data;
+    console.log(numberOfStudents.toString());
+  });
+  const lines = data.split('\n').filter((line) => line.trim() !== '');
+  // eslint-disable-next-line
+  const headers = lines.shift();
+  const students = lines.map((line) => line.split(',')).filter((line) => line.length > 1);
+
+  const totalStudentCount = students.length;
+
+  const csStudentList = [];
+  const sweStudentList = [];
+
+  // eslint-disable-next-line
+  const csStudents = students.forEach((student) => {
+    for (let i = 0; i < student.length; i += 1) {
+      if (student[i] === 'CS') {
+        csStudentList.push(student[0].trimEnd());
+      }
+    }
+  });
+  const csStudentCount = csStudentList.length;
+  // eslint-disable-next-line
+  const sweStudents = students.forEach((student) => {
+    for (let i = 0; i < student.length; i += 1) {
+      if (student[i] === 'SWE') {
+        sweStudentList.push(student[0].trimEnd());
+      }
+    }
+  });
+
+  const sweStudentCount = sweStudentList.length;
+  console.log(`Number of students: ${totalStudentCount}`);
+  console.log(`Number of students in CS: ${csStudentCount}. List: ${csStudentList.join(', ')}`);
+  console.log(`Number of students in SWE: ${sweStudentCount}. List: ${sweStudentList.join(', ')}`);
 }
 
 module.exports = countStudents;
