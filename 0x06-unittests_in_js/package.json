@@ -1,0 +1,16 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "0x06-unittests_in_js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run macho tests/",
+    "dev": "npm run "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^11.0.1"
+  }
+}
