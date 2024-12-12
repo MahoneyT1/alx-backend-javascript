@@ -1,7 +1,5 @@
-#!/usr/bin/node
-const calculateNumber = require('../0-calcul');
-const chai = require('chai')
-const assert = chai.assert();
+import calculateNumber from '../0-calcul.js';
+import { assert } from 'chai'
 
 // test cases for the function add
 describe('add function', ()=> {
