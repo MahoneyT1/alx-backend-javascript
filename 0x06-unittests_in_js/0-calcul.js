@@ -1,8 +1,12 @@
 #!/usr/bin/node
 
+
 function calculateNumber(a, b){
-    const result = math.round(a + b);
-    return result;
+    const argsA = Math.round(a);
+    const argsB = Math.round(b);
+
+    return argsA + argsB;
 };
 
 
+module.exports =  calculateNumber;
