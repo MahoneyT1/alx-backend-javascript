@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const { describe, it} = require('mocha');
-const calculateNumber = require('./0-calcul');
+const calculateNumber = require('../0-calcul');
 
 // Testsuite for calculateNumber function
 describe('calculateNumber', function () {
