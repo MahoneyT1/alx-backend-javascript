@@ -1,12 +1,13 @@
 #!/usr/bin/node
 const calculateNumber = require('../0-calcul');
-const assert = require('assert')
+const chai = require('chai')
+const assert = chai.assert();
 
 // test cases for the function add
 describe('add function', ()=> {
     it('adds two numbers', ()=> {
         const result = calculateNumber(1, 3);
-        assert.equal(result, 4);
+        assert.equal(result, 4)
     });
 
     it('adds a number and a float', ()=> {
