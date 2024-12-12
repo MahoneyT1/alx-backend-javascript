@@ -1,5 +1,5 @@
 import calculateNumber from '../0-calcul.js';
-import { assert } from 'chai'
+import assert from 'assert';
 
 // test cases for the function add
 describe('add function', ()=> {
